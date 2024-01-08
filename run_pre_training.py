@@ -94,7 +94,7 @@ def main():
 
     train_set = load_dataset(
         'json',
-        data_files=data_args.train_path,
+        data_files=data_args.train_path[0],
         block_size=2**25,
     )['train']
     dev_set = load_dataset(
