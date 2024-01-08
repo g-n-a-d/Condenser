@@ -52,6 +52,8 @@ class CondenserForPretraining(nn.Module):
         self.train_args = train_args
         self.data_args = data_args
 
+        self._keys_to_ignore_on_save = None
+
     def forward(self, model_input, labels):
         attention_mask = self.lm.get_extended_attention_mask(
             model_input['attention_mask'],
